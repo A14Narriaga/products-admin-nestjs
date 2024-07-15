@@ -21,10 +21,11 @@ const { jwtSeed } = EnvConfig()
 		JwtModule.register({
 			global: true,
 			secret: jwtSeed,
-			signOptions: { expiresIn: "6h" }
+			signOptions: { expiresIn: "60min" }
 		})
 	],
 	controllers: [AuthController],
-	providers: [AuthService]
+	providers: [AuthService],
+	exports: [AuthService]
 })
 export class AuthModule {}
